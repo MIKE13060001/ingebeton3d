@@ -129,7 +129,7 @@ export function HeroIngebeton() {
       className="relative bg-white dark:bg-black transition-colors duration-500"
       style={{ height: '300vh' }}
     >
-      <div className="sticky-hero sticky top-0 h-[100dvh] w-full flex flex-col md:flex-row items-center overflow-hidden transition-all duration-700">
+      <div className="sticky-hero sticky top-0 h-[100dvh] w-full flex flex-col md:flex-row items-center overflow-hidden">
 
         {/* Ligne décorative rouge verticale */}
         <div
