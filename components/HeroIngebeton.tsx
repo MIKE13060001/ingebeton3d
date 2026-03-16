@@ -119,7 +119,7 @@ export function HeroIngebeton() {
       className="relative bg-white dark:bg-black transition-colors duration-500"
       style={{ height: '300vh' }}
     >
-      <div className="sticky-hero sticky top-0 h-screen w-full flex items-center overflow-hidden">
+      <div className="sticky-hero sticky top-0 h-[100dvh] w-full flex flex-col md:flex-row items-center overflow-hidden transition-all duration-700">
 
         {/* Ligne décorative rouge verticale */}
         <div
@@ -129,8 +129,8 @@ export function HeroIngebeton() {
           }}
         />
 
-        {/* GAUCHE — Texte */}
-        <div className="relative z-10 w-1/2 pl-16 flex flex-col gap-6">
+        {/* Partie Gauche : Texte Content */}
+        <div className="relative z-10 w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center h-1/2 md:h-full">
           <span
             className="text-xs tracking-widest uppercase"
             style={{ color: '#E31E24', letterSpacing: '0.15em' }}
@@ -139,11 +139,11 @@ export function HeroIngebeton() {
           </span>
 
           <div>
-            <h1 className="text-6xl font-light text-black dark:text-white leading-none tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-light text-black dark:text-white leading-none tracking-tight">
               Ingébéton
             </h1>
             <p
-              className="text-2xl font-extralight mt-3 leading-snug text-black/40 dark:text-white/35"
+              className="text-lg md:text-2xl font-extralight mt-3 leading-snug text-black/40 dark:text-white/35"
             >
               Votre bureau d'études structure<br />
               experts en neuf et rénovation.
@@ -189,23 +189,43 @@ export function HeroIngebeton() {
           </div>
         </div>
 
-        {/* DROITE — Bâtiment 3D Spline */}
+        {/* Partie Droite : Scene 3D Spline */}
         <div
           ref={splineRef}
-          className="w-1/2 h-full"
+          className="relative w-full md:w-1/2 h-1/2 md:h-full cursor-grab active:cursor-grabbing"
           style={{ transformStyle: 'preserve-3d', willChange: 'transform' }}
         >
-          <SplineScene scene={BUILDING_SCENE} className="w-full h-full" onLoad={onLoad} />
+          <div 
+            className="spline-container w-full h-full transform-gpu"
+            style={{ 
+              opacity: 0,
+              filter: 'blur(10px)',
+              scale: 0.9,
+            }}
+          >
+            <SplineScene scene={BUILDING_SCENE} className="w-full h-full" onLoad={onLoad} />
+          </div>
 
-          {/* Fondu gauche pour cacher l'artefact de bordure */}
+          {/* Fondu gauche pour cacher l'artefact de bordure (Desktop) */}
           <div
-            className="absolute inset-y-0 -left-2 w-24 pointer-events-none hidden dark:block"
+            className="absolute inset-y-0 -left-2 w-24 pointer-events-none hidden md:dark:block"
             style={{ background: 'linear-gradient(to right, #000000 10%, transparent)' }}
           />
           <div
-            className="absolute inset-y-0 -left-2 w-24 pointer-events-none block dark:hidden"
+            className="absolute inset-y-0 -left-2 w-24 pointer-events-none hidden md:block dark:hidden"
             style={{ background: 'linear-gradient(to right, #ffffff 10%, transparent)' }}
           />
+          
+          {/* Fondu haut pour mobile */}
+          <div
+            className="absolute inset-x-0 top-0 h-32 pointer-events-none block md:hidden dark:hidden"
+            style={{ background: 'linear-gradient(to bottom, #ffffff 20%, transparent)' }}
+          />
+          <div
+            className="absolute inset-x-0 top-0 h-32 pointer-events-none hidden dark:block md:hidden"
+            style={{ background: 'linear-gradient(to bottom, #000000 20%, transparent)' }}
+          />
+
           {/* Fondu bas - Aggrandi pour cacher la lumière sous le bâtiment */}
           <div
             className="absolute bottom-0 inset-x-0 h-48 pointer-events-none hidden dark:block"
