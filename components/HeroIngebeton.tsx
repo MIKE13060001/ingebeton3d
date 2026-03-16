@@ -218,32 +218,32 @@ export function HeroIngebeton() {
 
           {/* Fondu gauche pour cacher l'artefact de bordure (Desktop) */}
           <div
-            className="absolute inset-y-0 -left-2 w-24 pointer-events-none hidden md:dark:block"
-            style={{ background: 'linear-gradient(to right, #000000 10%, transparent)' }}
+            className="absolute inset-y-0 -left-4 w-32 pointer-events-none hidden md:dark:block scale-x-110 origin-left"
+            style={{ background: 'linear-gradient(to right, #000000 20%, transparent)' }}
           />
           <div
-            className="absolute inset-y-0 -left-2 w-24 pointer-events-none hidden md:block dark:hidden"
-            style={{ background: 'linear-gradient(to right, #ffffff 10%, transparent)' }}
+            className="absolute inset-y-0 -left-4 w-32 pointer-events-none hidden md:block dark:hidden scale-x-110 origin-left"
+            style={{ background: 'linear-gradient(to right, #ffffff 20%, transparent)' }}
           />
           
           {/* Fondu haut pour mobile */}
           <div
-            className="absolute inset-x-0 top-0 h-32 pointer-events-none block md:hidden dark:hidden"
-            style={{ background: 'linear-gradient(to bottom, #ffffff 20%, transparent)' }}
+            className="absolute inset-x-0 -top-2 h-40 pointer-events-none block md:hidden dark:hidden scale-y-110 origin-top"
+            style={{ background: 'linear-gradient(to bottom, #ffffff 25%, transparent)' }}
           />
           <div
-            className="absolute inset-x-0 top-0 h-32 pointer-events-none hidden dark:block md:hidden"
-            style={{ background: 'linear-gradient(to bottom, #000000 20%, transparent)' }}
+            className="absolute inset-x-0 -top-2 h-40 pointer-events-none hidden dark:block md:hidden scale-y-110 origin-top"
+            style={{ background: 'linear-gradient(to bottom, #000000 25%, transparent)' }}
           />
 
           {/* Fondu bas - Aggrandi pour cacher la lumière sous le bâtiment */}
           <div
-            className="absolute bottom-0 inset-x-0 h-48 pointer-events-none hidden dark:block"
-            style={{ background: 'linear-gradient(to top, #000000 20%, transparent)' }}
+            className="absolute -bottom-2 inset-x-0 h-48 pointer-events-none hidden dark:block scale-y-110 origin-bottom"
+            style={{ background: 'linear-gradient(to top, #000000 25%, transparent)' }}
           />
           <div
-            className="absolute bottom-0 inset-x-0 h-48 pointer-events-none block dark:hidden"
-            style={{ background: 'linear-gradient(to top, #ffffff 20%, transparent)' }}
+            className="absolute -bottom-2 inset-x-0 h-48 pointer-events-none block dark:hidden scale-y-110 origin-bottom"
+            style={{ background: 'linear-gradient(to top, #ffffff 25%, transparent)' }}
           />
         </div>
 
