@@ -32,6 +32,16 @@ export function HeroIngebeton() {
         // Set to transparent or white for light mode
         app.setBackgroundColor('#ffffff')
       }
+
+      // Final entrance animation once loaded
+      gsap.to('.spline-container', {
+        opacity: 1,
+        filter: 'blur(0px)',
+        scale: 1,
+        duration: 2,
+        ease: 'expo.out',
+        delay: 0.5
+      })
     }
   }
 
